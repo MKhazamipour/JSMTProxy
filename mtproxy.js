@@ -28,7 +28,7 @@ for (let i = 0; i < telegram_servers.length; i++) {
 	con_count.push(0);
 }
 
-var configObj = JSON.parse(fs.readFileSync('config.json', 'utf8'));
+var configObj = JSON.parse(fs.readFileSync('/opt/JSMTProxy/config.json', 'utf8'));
 
 function reverseInplace (buffer) {
   for (var i = 0, j = buffer.length - 1; i < j; ++i, --j) {
