@@ -29,7 +29,7 @@ RUN cd /opt \
     && cd JSMTProxy \
     && ls -la \
     && cat /opt/JSMTProxy/mtproxy.js
-ADD JSMTProxy/run.sh /opt
+ADD run.sh /opt
 RUN cd /opt/ \
     && chmod +x run.sh \
     && ls -la
