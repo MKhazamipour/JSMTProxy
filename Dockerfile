@@ -1,4 +1,3 @@
-
 FROM ubuntu:16.04
 
 # Replace shell with bash so we can source files
@@ -29,8 +28,8 @@ RUN cd /opt \
     && cd JSMTProxy \
     && ls -la \
     && cat /opt/JSMTProxy/mtproxy.js
-ADD run.sh /opt
+COPY run.sh /opt
 RUN cd /opt/ \
     && chmod +x run.sh \
     && ls -la
-CMD ["./opt/run.sh"]
+ENTRYPOINT ["sh", "-c", "/opt/run.sh"]
