@@ -20,16 +20,17 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | b
 
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-
+ARG secret=verysecrectkey
+ENV secret="${secret}"
 EXPOSE 6969
 
 RUN cd /opt \
     && git clone https://github.com/Mormoroth/JSMTProxy.git \
     && cd JSMTProxy \
-    && ls -la \
-    && cat /opt/JSMTProxy/mtproxy.js
+    && ls -la 
+
 COPY run.sh /opt
 RUN cd /opt/ \
     && chmod +x run.sh \
     && ls -la
-ENTRYPOINT ["sh", "-c", "/opt/run.sh"]
+ENTRYPOINT ["/opt/run.sh"]
