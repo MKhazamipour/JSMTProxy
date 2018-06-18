@@ -6,7 +6,7 @@ High Performance NodeJS MTProto Proxy for telegram
 ### Debian & Ubuntu
 ```
 $> git clone https://github.com/Mormoroth/JSMTProxy.git
-$> cd JSTMProxy
+$> cd JSMTProxy
 $> docker build -t buildname .
 ```
 ## How to run 
